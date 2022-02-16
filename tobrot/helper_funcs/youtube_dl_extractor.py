@@ -23,6 +23,9 @@ async def extract_youtube_dl_formats(
         "-j",
         url,
     ]
+    if "mxplayer.in" in url:
+        command_to_exec.append("-f")
+        command_to_exec.append("4-0+2-0")
     if "hotstar" in url:
         command_to_exec.append("--geo-bypass-country")
         command_to_exec.append("IN")
